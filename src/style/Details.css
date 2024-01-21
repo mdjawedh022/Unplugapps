@@ -1,0 +1,23 @@
+.detail-heading{
+text-align: center;
+background-color: bisque;
+color: white;
+}
+ table {
+      width: 100%;
+      border-collapse: collapse;
+      /* margin-top: 20px; */
+    }
+
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: lightblue;
+      padding: 8px;
+      color: #fff;
+      
+    }
