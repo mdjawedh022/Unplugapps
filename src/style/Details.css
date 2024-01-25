@@ -13,11 +13,37 @@ color: white;
       border: 1px solid #ddd;
       padding: 8px;
       text-align: center;
+      font-weight: 500;
     }
 
     th {
       background-color: lightblue;
       padding: 8px;
       color: #fff;
+      
+    }
+    .btn-delete{
+      cursor: pointer;
+      background-color: red;
+      color: #fff;
+      
+
+    }
+    .Add-btn{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+    .Add-btn button{
+      padding: 5px 20px;
+      border: none;
+      font-weight: 500;
+      font-size: 1.5rem;
+      background-color:lightblue;
+      color: #fff;
+      border-radius: 5px;
+      margin: 10px 0;
+      cursor: pointer;
       
     }

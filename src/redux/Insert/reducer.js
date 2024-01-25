@@ -1,8 +1,4 @@
-import {
-  POST_HEADER_FAILED,
-  POST_HEADER_SUCCESS,
-  POST_HEADER_REQUEST,
-} from "./actionType";
+import { POST_MULTIPLE_FAILED, POST_MULTIPLE_REQUEST, POST_MULTIPLE_SUCCESS } from "./actionType";
 
 const initialState = {
   isLoading: false,
@@ -11,11 +7,11 @@ const initialState = {
 
 export const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case POST_HEADER_REQUEST:
+    case POST_MULTIPLE_REQUEST:
       return { ...state, isLoading: true, isError: false };
-    case POST_HEADER_SUCCESS:
+    case POST_MULTIPLE_SUCCESS:
       return { ...state, isLoading: false, isError: false };
-    case POST_HEADER_FAILED:
+    case POST_MULTIPLE_FAILED:
       return { ...state, isLoading: false, isError: true };
 
     default:

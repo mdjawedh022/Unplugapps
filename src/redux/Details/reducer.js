@@ -5,6 +5,9 @@ import {
   DELETE_TABLE_REQUEST,
   DELETE_TABLE_SUCCESS,
   DELETE_TABLE_FAILED,
+  POST_DETAIL_REQUEST,
+  POST_DETAIL_SUCCESS,
+  POST_DETAIL_FAILED,
 } from "./actionTypes";
 
 const initialState = {
@@ -38,6 +41,17 @@ export const reducer = (state = initialState, { type, payload }) => {
         },
       };
     case DELETE_TABLE_FAILED:
+      return { ...state, isLoading: false, isError: true };
+
+    case POST_DETAIL_REQUEST:
+      return { ...state, isLoading: true, isError: false };
+    case POST_DETAIL_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+      };
+    case POST_DETAIL_FAILED:
       return { ...state, isLoading: false, isError: true };
 
     default:

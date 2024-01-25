@@ -6,6 +6,9 @@ import {
   GET_DATA_FAILED,
   GET_DATA_REQUEST,
   GET_DATA_SUCCESS,
+  POST_DETAIL_FAILED,
+  POST_DETAIL_REQUEST,
+  POST_DETAIL_SUCCESS,
 } from "./actionTypes";
 
 export const gettableRequest = () => ({ type: GET_DATA_REQUEST });
@@ -19,7 +22,7 @@ export const TableDataGet = () => async (dispatch) => {
   dispatch(gettableRequest());
   try {
     const data = await axios.get(`http://5.189.180.8:8010/detail`);
-    //    console.log(data)
+      //  console.log(data)
     dispatch(gettableSuccess(data));
   } catch (err) {
     console.log(err);
@@ -52,5 +55,34 @@ export const deleteTableData = (id) => async (dispatch) => {
   } catch (error) {
     console.log(error);
     dispatch(deleteTableFailed(error));
+  }
+};
+
+const postDetailRequest = () => ({
+  type: POST_DETAIL_REQUEST,
+});
+
+const postDetailSuccess = (data) => ({
+  type: POST_DETAIL_SUCCESS,
+  payload: data,
+});
+
+const postDetailFailed = (error) => ({
+  type: POST_DETAIL_FAILED,
+  payload: error,
+});
+
+export const postDetailData = (postData) => async (dispatch) => {
+  dispatch(postDetailRequest());
+  try {
+    const response = await axios.post(
+      "http://5.189.180.8:8010/detail",
+      postData
+    );
+    dispatch(TableDataGet())
+    dispatch(postDetailSuccess(response.data));
+  } catch (error) {
+    console.log(error);
+    dispatch(postDetailFailed(error));
   }
 };

@@ -23,3 +23,13 @@ export const HeaderDataPost = (formData) => (dispatch) => {
       dispatch(postHeadFailed(err));
     });
 };
+// export const HeaderDataPost = (formData) => async(dispatch) => {
+//   dispatch(postHeadRequest());
+// try{
+//    const res=await axios.post(`http://5.189.180.8:8010/header`, formData)
+//    dispatch(postHeadSuccess(res))
+//    console.log(res);
+// }catch(err){
+//   dispatch(postHeadFailed(err))
+// }
+// };
